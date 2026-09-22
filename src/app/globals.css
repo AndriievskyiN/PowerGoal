@@ -1,0 +1,536 @@
+@import "tailwindcss";
+
+/* =============================================================================
+   PowerGoal design tokens
+   Palette is derived from IPF calibrated plate colors: 25kg red, 20kg blue,
+   15kg yellow, 10kg green, 5kg white, 2.5kg black. The three competition lifts
+   inherit plate colors; yellow is reserved as a marker (today, PR) and is never
+   used for text.
+   ========================================================================== */
+
+@theme {
+  /* Surfaces */
+  --color-canvas: #f1f3f5;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f8f9fa;
+  --color-surface-hover: #f3f4f6;
+
+  /* Lines */
+  --color-line: #e4e6ea;
+  --color-line-soft: #eef0f2;
+  --color-line-strong: #d3d7dd;
+
+  /* Ink */
+  --color-ink: #14171c;
+  --color-ink-muted: #656d7a;
+  --color-ink-faint: #98a0ad;
+  --color-ink-inverse: #ffffff;
+
+  /* Lifts — plate colors */
+  --color-squat: #2f6de0;
+  --color-squat-soft: #e8effc;
+  --color-bench: #2f9a56;
+  --color-bench-soft: #e7f4ec;
+  --color-deadlift: #a8241c;
+  --color-deadlift-soft: #f8e9e7;
+  --color-accessory: #7b8492;
+  --color-accessory-soft: #f0f1f3;
+
+  /* Marker — 15kg yellow. Fills and rules only. */
+  --color-marker: #f2c200;
+  --color-marker-soft: #fdf6dd;
+  --color-marker-wash: #fffdf4;
+
+  /* Physical plate colors — used only by the plate strip, which depicts real discs */
+  --color-plate-25: #d3372f;
+  --color-plate-20: #2f6de0;
+  --color-plate-15: #f2c200;
+  --color-plate-10: #1f9254;
+
+  /* Semantic */
+  --color-over: #c2410c;   /* logged harder than prescribed */
+  --color-under: #2f6de0;  /* logged easier than prescribed */
+  --color-positive: #2f9a56;
+
+  /* Type */
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+
+  /* Radii — small and consistent. No pill-shaped cards. */
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Elevation — one shadow, used sparingly */
+  --shadow-card: 0 1px 2px rgba(20, 23, 28, 0.04);
+  --shadow-pop: 0 8px 24px -8px rgba(20, 23, 28, 0.18), 0 2px 6px rgba(20, 23, 28, 0.06);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.45;
+    letter-spacing: -0.006em;
+  }
+
+  /* Every numeral in the app is monospaced and tabular. */
+  .num,
+  table.data td,
+  table.data th {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "zero" 1;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-marker-soft);
+  }
+}
+
+@layer components {
+  /* Small uppercase label used for column heads and field labels. */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+  }
+
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =============================================================================
+   Overview concepts — /v1 /v2 /v3
+   Each scope re-points the shared tokens so ordinary utilities re-theme inside it.
+   ========================================================================== */
+
+/* V1 · Ledger — crisp light product UI */
+.theme-v1 {
+  --color-canvas: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f8f9fb;
+  --color-surface-hover: #f1f3f6;
+  --color-line: #e6e8ec;
+  --color-line-soft: #eff1f4;
+  --color-line-strong: #d4d8de;
+  --color-ink: #101318;
+  --color-ink-muted: #5f6774;
+  --color-ink-faint: #9aa2ae;
+  --shadow-card: 0 1px 2px rgba(16, 19, 24, 0.04), 0 0 0 1px rgba(16, 19, 24, 0.02);
+}
+
+/* V2 · Forge — warm dark with ember accent */
+.theme-v2 {
+  --color-canvas: #0f0d0c;
+  --color-surface: #171412;
+  --color-surface-sunken: #131110;
+  --color-surface-hover: #1f1b18;
+  --color-line: #2a2420;
+  --color-line-soft: #221d1a;
+  --color-line-strong: #3a322c;
+  --color-ink: #f4efe9;
+  --color-ink-muted: #a89f95;
+  --color-ink-faint: #6f675f;
+  --color-ink-inverse: #0f0d0c;
+  --color-marker: #ff8a2a;
+  --color-marker-soft: rgba(255, 138, 42, 0.14);
+  --color-marker-wash: rgba(255, 138, 42, 0.06);
+  --color-squat: #5b8ff2;
+  --color-bench: #4fbf78;
+  --color-deadlift: #e2483a;
+  --color-positive: #4fbf78;
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 40px -20px rgba(0, 0, 0, 0.8);
+  color-scheme: dark;
+}
+.theme-v2 ::selection { background: rgba(255, 138, 42, 0.35); }
+.theme-v2 .ember {
+  background:
+    radial-gradient(60% 80% at 50% 0%, rgba(255, 122, 26, 0.22), transparent 70%),
+    linear-gradient(180deg, #1a1512 0%, #171412 100%);
+}
+.theme-v2 .dotgrid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.theme-v2 .glow-text { text-shadow: 0 0 24px rgba(255, 138, 42, 0.35); }
+.theme-v2 .ember-line {
+  background: linear-gradient(90deg, transparent, #ff8a2a 30%, #ff8a2a 70%, transparent);
+}
+
+/* V3 · Meet — airy light with cool wash and soft depth */
+.theme-v3 {
+  --color-canvas: #f3f6fa;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f6f8fb;
+  --color-surface-hover: #eef2f7;
+  --color-line: #e3e8ef;
+  --color-line-soft: #edf0f5;
+  --color-line-strong: #cfd6e0;
+  --color-ink: #0e1420;
+  --color-ink-muted: #5b6474;
+  --color-ink-faint: #97a1b0;
+  --shadow-card: 0 1px 2px rgba(14, 20, 32, 0.04), 0 8px 24px -16px rgba(14, 20, 32, 0.12);
+  --shadow-pop: 0 20px 50px -24px rgba(14, 20, 32, 0.25), 0 2px 8px rgba(14, 20, 32, 0.06);
+}
+.theme-v3 .wash {
+  background:
+    radial-gradient(70% 60% at 20% 0%, #dfeefe 0%, transparent 60%),
+    radial-gradient(50% 50% at 90% 10%, #e5f6ec 0%, transparent 60%),
+    linear-gradient(180deg, #f7f9fc 0%, #f3f6fa 100%);
+}
+.theme-v3 .glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Shared: staggered page-load reveal */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise-1 { animation-delay: 40ms; }
+.rise-2 { animation-delay: 100ms; }
+.rise-3 { animation-delay: 160ms; }
+.rise-4 { animation-delay: 220ms; }
+.rise-5 { animation-delay: 280ms; }
+.rise-6 { animation-delay: 340ms; }
+
+/* Raised panel — slightly rounded, sits proud of the canvas. No accent bars. */
+@layer components {
+  .panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 14px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 1px 2px rgba(16, 19, 24, 0.05),
+      0 10px 28px -18px rgba(16, 19, 24, 0.25);
+  }
+  .theme-v2 .panel {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 1px 0 rgba(0, 0, 0, 0.5),
+      0 18px 40px -24px rgba(0, 0, 0, 0.9);
+  }
+  .btn-raised {
+    border-radius: 10px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 1px 2px rgba(0, 0, 0, 0.25),
+      0 8px 20px -12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  }
+  .btn-raised:hover { transform: translateY(-1px); filter: brightness(1.08); }
+  .btn-raised:active { transform: translateY(0); }
+}
+.theme-v1 { --color-accent: #101318; --color-accent-soft: rgba(16, 19, 24, 0.08); }
+.theme-v2 { --color-accent: #ff8a2a; --color-accent-soft: rgba(255, 138, 42, 0.16); }
+.theme-v2 .btn-fab { box-shadow: 0 0 0 1px rgba(255, 138, 42, 0.4), 0 12px 32px -10px rgba(255, 138, 42, 0.8); }
+
+/* =============================================================================
+   Ember refinement — the dashboard theme. Deeper canvas, warmer surfaces,
+   grain, and glow reserved for the accent only.
+   ========================================================================== */
+.theme-ember {
+  --color-canvas: #0b0a09;
+  --color-surface: #141110;
+  --color-surface-sunken: #0f0d0c;
+  --color-surface-hover: #1c1816;
+  --color-line: #262019;
+  --color-line-soft: #1e1915;
+  --color-line-strong: #38302a;
+  --color-ink: #f3ede6;
+  --color-ink-muted: #a3978b;
+  --color-ink-faint: #665c53;
+  --color-ink-inverse: #0b0a09;
+  --color-marker: #ff7a1a;
+  --color-marker-soft: rgba(255, 122, 26, 0.16);
+  --color-marker-wash: rgba(255, 122, 26, 0.06);
+  --color-accent: #ff7a1a;
+  --color-accent-soft: rgba(255, 122, 26, 0.16);
+  --color-squat: #5b8ff2;
+  --color-bench: #4fbf78;
+  --color-deadlift: #e2483a;
+  --color-positive: #4fbf78;
+  /* daily variables */
+  --color-weight: #e9dfd4;
+  --color-sleep: #5b8ff2;
+  --color-recovery: #4fbf78;
+  --color-steps: #ff7a1a;
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 40px -20px rgba(0, 0, 0, 0.8);
+  --shadow-pop: 0 24px 60px -24px rgba(0, 0, 0, 0.9), 0 2px 8px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+  background:
+    radial-gradient(80% 50% at 50% -10%, rgba(255, 122, 26, 0.10), transparent 60%),
+    var(--color-canvas);
+}
+.theme-ember ::selection { background: rgba(255, 122, 26, 0.35); }
+.theme-ember .panel {
+  background: linear-gradient(180deg, #161312 0%, #121010 100%);
+  border-color: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 1px 0 rgba(0, 0, 0, 0.6),
+    0 24px 48px -28px rgba(0, 0, 0, 0.9);
+}
+.theme-ember .panel-hot {
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgba(255, 122, 26, 0.18), transparent 60%),
+    linear-gradient(180deg, #181311 0%, #121010 100%);
+  border-color: rgba(255, 122, 26, 0.25);
+}
+.theme-ember .btn-fab { box-shadow: 0 0 0 1px rgba(255, 122, 26, 0.4), 0 12px 32px -10px rgba(255, 122, 26, 0.8); }
+.theme-ember .grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.theme-ember .hairline { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.10) 20%, rgba(255,255,255,0.10) 80%, transparent); height: 1px; }
+.theme-ember .glow { text-shadow: 0 0 28px rgba(255, 122, 26, 0.35); }
+.theme-ember .ring-accent { box-shadow: 0 0 0 1px rgba(255, 122, 26, 0.45), 0 0 24px -6px rgba(255, 122, 26, 0.6); }
+
+/* Ember dashboards use Geist for words and Geist Mono for numerals. */
+.theme-ember {
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+.theme-ember .num,
+.theme-ember table.data td,
+.theme-ember table.data th,
+.theme-ember .label { font-family: var(--font-geist-mono); }
+.theme-ember .label { letter-spacing: 0.06em; }
+
+/* Icon tile — the one accent element allowed on a card header. */
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  color: #0b0a09;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 6px 16px -8px currentColor;
+}
+.tile-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--color-ink-muted);
+}
+.theme-ember .side-item { border-radius: 10px; }
+.theme-ember .side-item-active {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+.theme-ember .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  background: linear-gradient(180deg, #171413, #131110);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  color: var(--color-ink-muted);
+}
+.theme-ember table.data td .font-sans { font-family: var(--font-geist); }
+
+/* Contrast pass — the dark theme was too dim to read numbers at a glance. */
+.theme-ember {
+  --color-ink-muted: #b6aa9d;
+  --color-ink-faint: #7f7469;
+  --color-line: #2b241e;
+  --color-line-soft: #241e19;
+}
+.theme-ember .sheet { font-size: 13.5px; }
+.theme-ember .sheet th { font-size: 10.5px; }
+.theme-ember .sheet td { padding-top: 9px; padding-bottom: 9px; }
+.theme-ember .cell {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font: inherit;
+  font-family: var(--font-geist-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink);
+  text-align: right;
+  outline: none;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+.theme-ember .cell::placeholder { color: var(--color-ink-faint); }
+.theme-ember .cell:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.06); }
+.theme-ember .cell:focus { background: rgba(255, 122, 26, 0.08); border-color: rgba(255, 122, 26, 0.5); box-shadow: 0 0 0 3px rgba(255, 122, 26, 0.12); }
+.theme-ember .cell-hot { background: rgba(255, 122, 26, 0.06); border-color: rgba(255, 122, 26, 0.18); }
+.theme-ember .cell[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+.theme-ember .daypill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 104px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, #171413, #131110);
+  color: var(--color-ink-muted);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  scroll-snap-align: center;
+}
+.theme-ember .daypill:hover { border-color: rgba(255, 255, 255, 0.14); color: var(--color-ink); }
+.theme-ember .daypill-active { border-color: rgba(255, 122, 26, 0.55); background: linear-gradient(180deg, #221712, #171210); color: var(--color-ink); box-shadow: 0 0 24px -8px rgba(255, 122, 26, 0.6); }
+.theme-ember .daypill-done { border-color: rgba(255, 255, 255, 0.04); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* =============================================================================
+   Calm pass. Lower contrast, orange only where it means something, and one
+   typeface for words and numbers so the sheet reads as a tool, not a template.
+   ========================================================================== */
+.theme-ember {
+  --color-canvas: #121110;
+  --color-surface: #191716;
+  --color-surface-sunken: #151312;
+  --color-surface-hover: #201d1b;
+  --color-line: #2a2624;
+  --color-line-soft: #23201e;
+  --color-line-strong: #3a3532;
+  --color-ink: #e9e3dc;
+  --color-ink-muted: #a59c93;
+  --color-ink-faint: #736a62;
+  --color-marker-wash: rgba(255, 122, 26, 0.05);
+  --color-weight: #cfc6bc;
+  background: var(--color-canvas);
+}
+.theme-ember .panel {
+  background: var(--color-surface);
+  border-color: rgba(255, 255, 255, 0.055);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 10px 30px -22px rgba(0, 0, 0, 0.7);
+}
+.theme-ember .grain::after { opacity: 0.18; }
+.theme-ember .num,
+.theme-ember table.data td,
+.theme-ember table.data th,
+.theme-ember .cell {
+  font-family: var(--font-geist);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+.theme-ember .label {
+  font-family: var(--font-geist);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+.theme-ember .tile { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25); }
+.theme-ember .btn-fab { box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.7); }
+.theme-ember .chip { background: var(--color-surface); box-shadow: none; }
+
+/* Sheet — quiet by default, alive on hover/focus. */
+.theme-ember .sheet { font-size: 14px; }
+.theme-ember .sheet td { padding-top: 6px; padding-bottom: 6px; }
+.theme-ember .sheet tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
+.theme-ember .cell {
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: var(--color-ink);
+  font-size: 14px;
+}
+.theme-ember .cell-text { text-align: left; font-weight: 500; }
+.theme-ember .cell:hover { background: rgba(255, 255, 255, 0.035); border-color: transparent; }
+.theme-ember .cell:focus { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.16); box-shadow: none; }
+.theme-ember .cell-hot { background: transparent; border-color: transparent; }
+.theme-ember .cell-empty::placeholder { color: var(--color-ink-faint); opacity: 0.8; }
+.theme-ember .cell-dim { color: var(--color-ink-muted); }
+.theme-ember .nav-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.07); color: var(--color-ink-muted);
+  background: var(--color-surface);
+}
+.theme-ember .nav-btn:hover:not(:disabled) { color: var(--color-ink); background: var(--color-surface-hover); }
+.theme-ember .nav-btn:disabled { opacity: 0.3; }
+
+/* Program editor + daily log */
+.theme-ember .cell-sm { padding: 4px 6px; font-size: 13px; border-radius: 7px; }
+.theme-ember .input {
+  height: 36px;
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-surface-sunken);
+  color: var(--color-ink);
+  font-size: 14px;
+  text-align: left;
+  font-family: var(--font-geist);
+  font-variant-numeric: tabular-nums;
+  color-scheme: dark;
+}
+.theme-ember .input:hover { border-color: rgba(255, 255, 255, 0.14); background: var(--color-surface-sunken); }
+.theme-ember .input:focus { border-color: rgba(255, 255, 255, 0.24); background: var(--color-surface-sunken); }
+.theme-ember .tab {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 1px;
+  padding: 9px 14px; border-radius: 11px; border: 1px solid transparent;
+  color: var(--color-ink-muted); text-align: left;
+}
+.theme-ember .tab:hover { color: var(--color-ink); background: rgba(255, 255, 255, 0.03); }
+.theme-ember .tab-active { color: var(--color-ink); background: var(--color-surface); border-color: rgba(255, 255, 255, 0.07); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04); }
+.theme-ember .icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 8px; color: var(--color-ink-faint);
+}
+.theme-ember .icon-btn:hover:not(:disabled) { color: var(--color-ink); background: rgba(255, 255, 255, 0.05); }
+.theme-ember .icon-btn:disabled { opacity: 0.25; }
+.theme-ember .col-now { background: rgba(255, 255, 255, 0.018); }

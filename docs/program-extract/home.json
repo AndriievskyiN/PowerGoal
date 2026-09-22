@@ -1,0 +1,1272 @@
+{
+  "sheet": "Home",
+  "cells": [
+    {
+      "coord": "J2",
+      "row": 2,
+      "col": "J",
+      "value": "Home",
+      "formula": null
+    },
+    {
+      "coord": "B4",
+      "row": 4,
+      "col": "B",
+      "value": "ATHLETE:",
+      "formula": null
+    },
+    {
+      "coord": "C4",
+      "row": 4,
+      "col": "C",
+      "value": "Kilo McBencherson",
+      "formula": null
+    },
+    {
+      "coord": "E4",
+      "row": 4,
+      "col": "E",
+      "value": "AGE:",
+      "formula": null
+    },
+    {
+      "coord": "F4",
+      "row": 4,
+      "col": "F",
+      "value": 25,
+      "formula": null
+    },
+    {
+      "coord": "J4",
+      "row": 4,
+      "col": "J",
+      "value": "LB ROUNDING:",
+      "formula": null
+    },
+    {
+      "coord": "K4",
+      "row": 4,
+      "col": "K",
+      "value": 5,
+      "formula": null
+    },
+    {
+      "coord": "M4",
+      "row": 4,
+      "col": "M",
+      "value": "MEET DATE:",
+      "formula": null
+    },
+    {
+      "coord": "N4",
+      "row": 4,
+      "col": "N",
+      "value": "2026-06-01T00:00:00",
+      "formula": null
+    },
+    {
+      "coord": "P4",
+      "row": 4,
+      "col": "P",
+      "value": "WEEKS OUT:",
+      "formula": null
+    },
+    {
+      "coord": "Q4",
+      "row": 4,
+      "col": "Q",
+      "value": 23.7,
+      "formula": "=IF(ISNUMBER(Q5), ROUND(Q5 / 7,1), \"NA\")"
+    },
+    {
+      "coord": "B5",
+      "row": 5,
+      "col": "B",
+      "value": "WEIGHT CLASS:",
+      "formula": null
+    },
+    {
+      "coord": "C5",
+      "row": 5,
+      "col": "C",
+      "value": "93kg",
+      "formula": null
+    },
+    {
+      "coord": "E5",
+      "row": 5,
+      "col": "E",
+      "value": "GOAL:",
+      "formula": null
+    },
+    {
+      "coord": "F5",
+      "row": 5,
+      "col": "F",
+      "value": "Strength",
+      "formula": null
+    },
+    {
+      "coord": "J5",
+      "row": 5,
+      "col": "J",
+      "value": "KG ROUNDING:",
+      "formula": null
+    },
+    {
+      "coord": "K5",
+      "row": 5,
+      "col": "K",
+      "value": 2.5,
+      "formula": null
+    },
+    {
+      "coord": "M5",
+      "row": 5,
+      "col": "M",
+      "value": "DAY/SESSION:",
+      "formula": null
+    },
+    {
+      "coord": "N5",
+      "row": 5,
+      "col": "N",
+      "value": 5,
+      "formula": null
+    },
+    {
+      "coord": "P5",
+      "row": 5,
+      "col": "P",
+      "value": "DAYS OUT:",
+      "formula": null
+    },
+    {
+      "coord": "Q5",
+      "row": 5,
+      "col": "Q",
+      "value": 166,
+      "formula": "=IF(ISNUMBER(DAY($N$4)), IF(($N$4 - TODAY()) >= 0, $N$4 - TODAY(), \"NA\"), \"NA\")"
+    },
+    {
+      "coord": "B7",
+      "row": 7,
+      "col": "B",
+      "value": "INSTRUCTIONS",
+      "formula": null
+    },
+    {
+      "coord": "J7",
+      "row": 7,
+      "col": "J",
+      "value": "ESTIMATED 1 REP MAX",
+      "formula": null
+    },
+    {
+      "coord": "B8",
+      "row": 8,
+      "col": "B",
+      "value": "Type your 1 to 5 rep-max (RM) in the shaded boxes in the table on the right either in pounds or kilograms, and your estimated 1RM will calculate itself. The days of the week you are to train are set. The schedule must go in the order of the days listed. You can start any day you'd like if the days off are kept in the same order. ",
+      "formula": null
+    },
+    {
+      "coord": "K8",
+      "row": 8,
+      "col": "K",
+      "value": "LOAD",
+      "formula": null
+    },
+    {
+      "coord": "L8",
+      "row": 8,
+      "col": "L",
+      "value": "UNITS",
+      "formula": null
+    },
+    {
+      "coord": "M8",
+      "row": 8,
+      "col": "M",
+      "value": "REPS",
+      "formula": null
+    },
+    {
+      "coord": "N8",
+      "row": 8,
+      "col": "N",
+      "value": "E1RM-LB",
+      "formula": null
+    },
+    {
+      "coord": "O8",
+      "row": 8,
+      "col": "O",
+      "value": "E1RM-KG",
+      "formula": null
+    },
+    {
+      "coord": "J9",
+      "row": 9,
+      "col": "J",
+      "value": "SQUAT",
+      "formula": null
+    },
+    {
+      "coord": "K9",
+      "row": 9,
+      "col": "K",
+      "value": 200,
+      "formula": null
+    },
+    {
+      "coord": "L9",
+      "row": 9,
+      "col": "L",
+      "value": "KG",
+      "formula": null
+    },
+    {
+      "coord": "M9",
+      "row": 9,
+      "col": "M",
+      "value": 1,
+      "formula": null
+    },
+    {
+      "coord": "N9",
+      "row": 9,
+      "col": "N",
+      "value": 440,
+      "formula": "=MROUND(IF($M$9 > 0, ROUND(IF($L9 = \"KG\", $K9 * 2.20462, $K9) / (1.0278 - $M9 * 0.0278), 2), 0), $K$4)"
+    },
+    {
+      "coord": "O9",
+      "row": 9,
+      "col": "O",
+      "value": 200,
+      "formula": "=MROUND(IF($M9 > 0, ROUND(IF($L9 = \"LBS\", $K9 / 2.20462, $K9) / (1.0278 - $M9 * 0.0278), 2), 0), $K$5)"
+    },
+    {
+      "coord": "J10",
+      "row": 10,
+      "col": "J",
+      "value": "BENCH",
+      "formula": null
+    },
+    {
+      "coord": "K10",
+      "row": 10,
+      "col": "K",
+      "value": 150,
+      "formula": null
+    },
+    {
+      "coord": "L10",
+      "row": 10,
+      "col": "L",
+      "value": "KG",
+      "formula": null
+    },
+    {
+      "coord": "M10",
+      "row": 10,
+      "col": "M",
+      "value": 1,
+      "formula": null
+    },
+    {
+      "coord": "N10",
+      "row": 10,
+      "col": "N",
+      "value": 330,
+      "formula": "=MROUND(IF($M$9 > 0, ROUND(IF($L10 = \"KG\", $K10 * 2.20462, $K10) / (1.0278 - $M10 * 0.0278), 2), 0), $K$4)"
+    },
+    {
+      "coord": "O10",
+      "row": 10,
+      "col": "O",
+      "value": 150,
+      "formula": "=MROUND(IF($M10 > 0, ROUND(IF($L10 = \"LBS\", $K10 / 2.20462, $K10) / (1.0278 - $M10 * 0.0278), 2), 0), $K$5)"
+    },
+    {
+      "coord": "J11",
+      "row": 11,
+      "col": "J",
+      "value": "DEADLIFT",
+      "formula": null
+    },
+    {
+      "coord": "K11",
+      "row": 11,
+      "col": "K",
+      "value": 250,
+      "formula": null
+    },
+    {
+      "coord": "L11",
+      "row": 11,
+      "col": "L",
+      "value": "KG",
+      "formula": null
+    },
+    {
+      "coord": "M11",
+      "row": 11,
+      "col": "M",
+      "value": 1,
+      "formula": null
+    },
+    {
+      "coord": "N11",
+      "row": 11,
+      "col": "N",
+      "value": 550,
+      "formula": "=MROUND(IF($M$9 > 0, ROUND(IF($L11 = \"KG\", $K11 * 2.20462, $K11) / (1.0278 - $M11 * 0.0278), 2), 0), $K$4)"
+    },
+    {
+      "coord": "O11",
+      "row": 11,
+      "col": "O",
+      "value": 250,
+      "formula": "=MROUND(IF($M11 > 0, ROUND(IF($L11 = \"LBS\", $K11 / 2.20462, $K11) / (1.0278 - $M11 * 0.0278), 2), 0), $K$5)"
+    },
+    {
+      "coord": "B14",
+      "row": 14,
+      "col": "B",
+      "value": "RPE SCALE",
+      "formula": null
+    },
+    {
+      "coord": "J14",
+      "row": 14,
+      "col": "J",
+      "value": "RECOMMENDED SPLIT",
+      "formula": null
+    },
+    {
+      "coord": "S14",
+      "row": 14,
+      "col": "S",
+      "value": "RECOMMENDED SPLIT",
+      "formula": null
+    },
+    {
+      "coord": "B15",
+      "row": 15,
+      "col": "B",
+      "value": "RPE",
+      "formula": null
+    },
+    {
+      "coord": "C15",
+      "row": 15,
+      "col": "C",
+      "value": "DEFINITION",
+      "formula": null
+    },
+    {
+      "coord": "K15",
+      "row": 15,
+      "col": "K",
+      "value": "SATURDAY",
+      "formula": null
+    },
+    {
+      "coord": "L15",
+      "row": 15,
+      "col": "L",
+      "value": "SUNDAY",
+      "formula": null
+    },
+    {
+      "coord": "M15",
+      "row": 15,
+      "col": "M",
+      "value": "MONDAY",
+      "formula": null
+    },
+    {
+      "coord": "N15",
+      "row": 15,
+      "col": "N",
+      "value": "TUESDAY",
+      "formula": null
+    },
+    {
+      "coord": "O15",
+      "row": 15,
+      "col": "O",
+      "value": "WEDNESDAY",
+      "formula": null
+    },
+    {
+      "coord": "P15",
+      "row": 15,
+      "col": "P",
+      "value": "THURSDAY",
+      "formula": null
+    },
+    {
+      "coord": "Q15",
+      "row": 15,
+      "col": "Q",
+      "value": "FRIDAY",
+      "formula": null
+    },
+    {
+      "coord": "T15",
+      "row": 15,
+      "col": "T",
+      "value": "SATURDAY",
+      "formula": null
+    },
+    {
+      "coord": "U15",
+      "row": 15,
+      "col": "U",
+      "value": "SUNDAY",
+      "formula": null
+    },
+    {
+      "coord": "V15",
+      "row": 15,
+      "col": "V",
+      "value": "MONDAY",
+      "formula": null
+    },
+    {
+      "coord": "W15",
+      "row": 15,
+      "col": "W",
+      "value": "TUESDAY",
+      "formula": null
+    },
+    {
+      "coord": "X15",
+      "row": 15,
+      "col": "X",
+      "value": "WEDNESDAY",
+      "formula": null
+    },
+    {
+      "coord": "Y15",
+      "row": 15,
+      "col": "Y",
+      "value": "THURSDAY",
+      "formula": null
+    },
+    {
+      "coord": "Z15",
+      "row": 15,
+      "col": "Z",
+      "value": "FRIDAY",
+      "formula": null
+    },
+    {
+      "coord": "B16",
+      "row": 16,
+      "col": "B",
+      "value": 10,
+      "formula": null
+    },
+    {
+      "coord": "C16",
+      "row": 16,
+      "col": "C",
+      "value": "Full max, no more reps/weight left in the tank",
+      "formula": null
+    },
+    {
+      "coord": "J16",
+      "row": 16,
+      "col": "J",
+      "value": "SQUAT",
+      "formula": null
+    },
+    {
+      "coord": "K16",
+      "row": 16,
+      "col": "K",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "O16",
+      "row": 16,
+      "col": "O",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "S16",
+      "row": 16,
+      "col": "S",
+      "value": "SQUAT",
+      "formula": null
+    },
+    {
+      "coord": "T16",
+      "row": 16,
+      "col": "T",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "W16",
+      "row": 16,
+      "col": "W",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "B17",
+      "row": 17,
+      "col": "B",
+      "value": 9.5,
+      "formula": null
+    },
+    {
+      "coord": "C17",
+      "row": 17,
+      "col": "C",
+      "value": "Could have done slightly more weight, but not another rep",
+      "formula": null
+    },
+    {
+      "coord": "J17",
+      "row": 17,
+      "col": "J",
+      "value": "DEADLIFT",
+      "formula": null
+    },
+    {
+      "coord": "K17",
+      "row": 17,
+      "col": "K",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "O17",
+      "row": 17,
+      "col": "O",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "S17",
+      "row": 17,
+      "col": "S",
+      "value": "DEADLIFT",
+      "formula": null
+    },
+    {
+      "coord": "T17",
+      "row": 17,
+      "col": "T",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "W17",
+      "row": 17,
+      "col": "W",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "B18",
+      "row": 18,
+      "col": "B",
+      "value": 9,
+      "formula": null
+    },
+    {
+      "coord": "C18",
+      "row": 18,
+      "col": "C",
+      "value": "One rep shy of failure",
+      "formula": null
+    },
+    {
+      "coord": "J18",
+      "row": 18,
+      "col": "J",
+      "value": "BENCH PRESS",
+      "formula": null
+    },
+    {
+      "coord": "K18",
+      "row": 18,
+      "col": "K",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "N18",
+      "row": 18,
+      "col": "N",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "P18",
+      "row": 18,
+      "col": "P",
+      "value": "TERTIARY",
+      "formula": null
+    },
+    {
+      "coord": "S18",
+      "row": 18,
+      "col": "S",
+      "value": "BENCH PRESS",
+      "formula": null
+    },
+    {
+      "coord": "T18",
+      "row": 18,
+      "col": "T",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "V18",
+      "row": 18,
+      "col": "V",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "Y18",
+      "row": 18,
+      "col": "Y",
+      "value": "TERTIARY",
+      "formula": null
+    },
+    {
+      "coord": "B19",
+      "row": 19,
+      "col": "B",
+      "value": 8.5,
+      "formula": null
+    },
+    {
+      "coord": "C19",
+      "row": 19,
+      "col": "C",
+      "value": "One rep shy of failure and could have done slightly more weight",
+      "formula": null
+    },
+    {
+      "coord": "B20",
+      "row": 20,
+      "col": "B",
+      "value": 8,
+      "formula": null
+    },
+    {
+      "coord": "C20",
+      "row": 20,
+      "col": "C",
+      "value": "Two reps shy of failure",
+      "formula": null
+    },
+    {
+      "coord": "J20",
+      "row": 20,
+      "col": "J",
+      "value": "ALTERNATE SPLIT",
+      "formula": null
+    },
+    {
+      "coord": "S20",
+      "row": 20,
+      "col": "S",
+      "value": "ALTERNATE SPLIT",
+      "formula": null
+    },
+    {
+      "coord": "B21",
+      "row": 21,
+      "col": "B",
+      "value": 7.5,
+      "formula": null
+    },
+    {
+      "coord": "C21",
+      "row": 21,
+      "col": "C",
+      "value": "Two reps shy of failure and could have done slightly more weight",
+      "formula": null
+    },
+    {
+      "coord": "K21",
+      "row": 21,
+      "col": "K",
+      "value": "SATURDAY",
+      "formula": null
+    },
+    {
+      "coord": "L21",
+      "row": 21,
+      "col": "L",
+      "value": "SUNDAY",
+      "formula": null
+    },
+    {
+      "coord": "M21",
+      "row": 21,
+      "col": "M",
+      "value": "MONDAY",
+      "formula": null
+    },
+    {
+      "coord": "N21",
+      "row": 21,
+      "col": "N",
+      "value": "TUESDAY",
+      "formula": null
+    },
+    {
+      "coord": "O21",
+      "row": 21,
+      "col": "O",
+      "value": "WEDNESDAY",
+      "formula": null
+    },
+    {
+      "coord": "P21",
+      "row": 21,
+      "col": "P",
+      "value": "THURSDAY",
+      "formula": null
+    },
+    {
+      "coord": "Q21",
+      "row": 21,
+      "col": "Q",
+      "value": "FRIDAY",
+      "formula": null
+    },
+    {
+      "coord": "T21",
+      "row": 21,
+      "col": "T",
+      "value": "SATURDAY",
+      "formula": null
+    },
+    {
+      "coord": "U21",
+      "row": 21,
+      "col": "U",
+      "value": "SUNDAY",
+      "formula": null
+    },
+    {
+      "coord": "V21",
+      "row": 21,
+      "col": "V",
+      "value": "MONDAY",
+      "formula": null
+    },
+    {
+      "coord": "W21",
+      "row": 21,
+      "col": "W",
+      "value": "TUESDAY",
+      "formula": null
+    },
+    {
+      "coord": "X21",
+      "row": 21,
+      "col": "X",
+      "value": "WEDNESDAY",
+      "formula": null
+    },
+    {
+      "coord": "Y21",
+      "row": 21,
+      "col": "Y",
+      "value": "THURSDAY",
+      "formula": null
+    },
+    {
+      "coord": "Z21",
+      "row": 21,
+      "col": "Z",
+      "value": "FRIDAY",
+      "formula": null
+    },
+    {
+      "coord": "B22",
+      "row": 22,
+      "col": "B",
+      "value": 7,
+      "formula": null
+    },
+    {
+      "coord": "C22",
+      "row": 22,
+      "col": "C",
+      "value": "Three reps shy of failure",
+      "formula": null
+    },
+    {
+      "coord": "J22",
+      "row": 22,
+      "col": "J",
+      "value": "SQUAT",
+      "formula": null
+    },
+    {
+      "coord": "K22",
+      "row": 22,
+      "col": "K",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "O22",
+      "row": 22,
+      "col": "O",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "S22",
+      "row": 22,
+      "col": "S",
+      "value": "SQUAT",
+      "formula": null
+    },
+    {
+      "coord": "T22",
+      "row": 22,
+      "col": "T",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "W22",
+      "row": 22,
+      "col": "W",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "B23",
+      "row": 23,
+      "col": "B",
+      "value": 6.5,
+      "formula": null
+    },
+    {
+      "coord": "C23",
+      "row": 23,
+      "col": "C",
+      "value": "Three reps shy of failure and could have done slightly more weight",
+      "formula": null
+    },
+    {
+      "coord": "J23",
+      "row": 23,
+      "col": "J",
+      "value": "DEADLIFT",
+      "formula": null
+    },
+    {
+      "coord": "K23",
+      "row": 23,
+      "col": "K",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "O23",
+      "row": 23,
+      "col": "O",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "S23",
+      "row": 23,
+      "col": "S",
+      "value": "DEADLIFT",
+      "formula": null
+    },
+    {
+      "coord": "T23",
+      "row": 23,
+      "col": "T",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "W23",
+      "row": 23,
+      "col": "W",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "B24",
+      "row": 24,
+      "col": "B",
+      "value": 6,
+      "formula": null
+    },
+    {
+      "coord": "C24",
+      "row": 24,
+      "col": "C",
+      "value": "Four reps shy of failure",
+      "formula": null
+    },
+    {
+      "coord": "J24",
+      "row": 24,
+      "col": "J",
+      "value": "BENCH PRESS",
+      "formula": null
+    },
+    {
+      "coord": "K24",
+      "row": 24,
+      "col": "K",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "M24",
+      "row": 24,
+      "col": "M",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "P24",
+      "row": 24,
+      "col": "P",
+      "value": "TERTIARY",
+      "formula": null
+    },
+    {
+      "coord": "S24",
+      "row": 24,
+      "col": "S",
+      "value": "BENCH PRESS",
+      "formula": null
+    },
+    {
+      "coord": "T24",
+      "row": 24,
+      "col": "T",
+      "value": "PRIMARY",
+      "formula": null
+    },
+    {
+      "coord": "V24",
+      "row": 24,
+      "col": "V",
+      "value": "SECONDARY",
+      "formula": null
+    },
+    {
+      "coord": "X24",
+      "row": 24,
+      "col": "X",
+      "value": "TERTIARY",
+      "formula": null
+    },
+    {
+      "coord": "B27",
+      "row": 27,
+      "col": "B",
+      "value": "FREQUENTLY ASKED QUESTIONS",
+      "formula": null
+    },
+    {
+      "coord": "B28",
+      "row": 28,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C28",
+      "row": 28,
+      "col": "C",
+      "value": "What does RPE mean?",
+      "formula": null
+    },
+    {
+      "coord": "B29",
+      "row": 29,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C29",
+      "row": 29,
+      "col": "C",
+      "value": "In powerlifting, RPE stands for Rate of Perceived Exertion, and refers to a judgement of how many reps are \"left in the tank\" of a given set. it\u2019s a way to measure how hard a set feels, based on how close you are to failure. So if your program says \u201cSquat 1x3 @ RPE 8,\u201d it means: Do 1 set of 3 reps, heavy enough that you could do 2 more reps if you had to, but stop there. RPE lets lifters autoregulate \u2014 adjusting the load based on how strong or fatigued they feel that day instead of sticking to a fixed percentage.",
+      "formula": null
+    },
+    {
+      "coord": "B31",
+      "row": 31,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C31",
+      "row": 31,
+      "col": "C",
+      "value": "How do I set my training max / E1RM?",
+      "formula": null
+    },
+    {
+      "coord": "B32",
+      "row": 32,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C32",
+      "row": 32,
+      "col": "C",
+      "value": "Your training max should be a weight you\u2019re confident you can hit on any given day, not just on your best day. It\u2019s meant to be a consistent, reliable baseline for training \u2014 something you can perform even when you\u2019re a little tired, not perfectly peaked, or having an average session. If you\u2019re unsure what that number should be, you can use the e1RM calculator above to estimate your training max based on recent lifts. This gives you a solid starting point that you can fine-tune over time as you gain more experience and consistency.",
+      "formula": null
+    },
+    {
+      "coord": "B36",
+      "row": 36,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C36",
+      "row": 36,
+      "col": "C",
+      "value": "How often should I adjust my training max / ER1M?",
+      "formula": null
+    },
+    {
+      "coord": "B37",
+      "row": 37,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C37",
+      "row": 37,
+      "col": "C",
+      "value": "You should only make small adjustments from block to block, and only if you\u2019ve noticed a significant increase in strength during your recent training. The goal is steady, sustainable progress \u2014 not constant changes that throw off your training consistency. At most, adjust your training max by 2.5\u20135 kg (5\u201310 lbs) each block. Remember, most of the program is RPE-based, so you\u2019ll be able to autoregulate your training on a daily basis. The training max is mainly used for the percentage-based work and to calculate suggested ranges for your top sets, so small, steady updates are all that\u2019s needed.",
+      "formula": null
+    },
+    {
+      "coord": "B39",
+      "row": 39,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C39",
+      "row": 39,
+      "col": "C",
+      "value": "When should I test my lifts / max out?",
+      "formula": null
+    },
+    {
+      "coord": "B40",
+      "row": 40,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C40",
+      "row": 40,
+      "col": "C",
+      "value": "It\u2019s best to wait until the end of the program to test your lifts. At that point, you have two options. You can run the regular 3rd block, where you may choose to test a rep max or your 1RM, depending on your goals. Or, if you want to specifically prepare for a meet or a max-out day, you can run the optional peaking block, which is designed to help you perform at your best when testing. Either approach gives you a structured way to showcase your progress while staying in line with the program\u2019s overall progression.",
+      "formula": null
+    },
+    {
+      "coord": "B45",
+      "row": 45,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C45",
+      "row": 45,
+      "col": "C",
+      "value": "Can I change or adjust the program?",
+      "formula": null
+    },
+    {
+      "coord": "B46",
+      "row": 46,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C46",
+      "row": 46,
+      "col": "C",
+      "value": "The program is written to provide the best possible results as designed, with each block and session structured to build on the previous one. However, you\u2019re fully allowed to make changes or adjustments if you prefer. Everyone\u2019s situation, recovery, and preferences are different \u2014 so if you need to modify an exercise, adjust volume, or tweak scheduling to better fit your needs, you absolutely can. Just keep in mind that major changes may alter the program\u2019s intended progression.",
+      "formula": null
+    },
+    {
+      "coord": "B49",
+      "row": 49,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C49",
+      "row": 49,
+      "col": "C",
+      "value": "Can I go outside of the suggested Top Set Ranges?",
+      "formula": null
+    },
+    {
+      "coord": "B50",
+      "row": 50,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C50",
+      "row": 50,
+      "col": "C",
+      "value": "Yes \u2014 you can go outside of the suggested ranges if you feel it\u2019s necessary, as long as you can still perform the set at or below the designated RPE. The same applies if you need to go below the range on a given day. The suggested ranges are simply a guide to help with load selection, not strict limits. Use them as a reference point, but rely on your RPE and performance to make the best decision for your training that day.",
+      "formula": null
+    },
+    {
+      "coord": "B53",
+      "row": 53,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C53",
+      "row": 53,
+      "col": "C",
+      "value": "Should I do another Top Set if I undershoot the RPE?",
+      "formula": null
+    },
+    {
+      "coord": "B54",
+      "row": 54,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C54",
+      "row": 54,
+      "col": "C",
+      "value": "If you undershoot the RPE, that\u2019s completely fine \u2014 it happens. Do not do another top set. Simply note that you likely have more room to progress the following week. The goal isn\u2019t to chase the exact RPE every session, but to train with intent and consistency over time. Undershooting occasionally helps manage fatigue and sets you up for continued progress.",
+      "formula": null
+    },
+    {
+      "coord": "B57",
+      "row": 57,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C57",
+      "row": 57,
+      "col": "C",
+      "value": "What should I do if I overshoot the Top Set RPE?",
+      "formula": null
+    },
+    {
+      "coord": "B58",
+      "row": 58,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C58",
+      "row": 58,
+      "col": "C",
+      "value": "Overshooting the Top Set RPE will happen from time to time, and that\u2019s completely okay. If you feel like you greatly overshot the RPE, and some of the following sets are based on your top set weight, you can adjust the backdown sets to a slightly lower weight to account for the extra intensity. The key is to stay mindful of overall fatigue and maintain good form \u2014 occasional overshoots won\u2019t derail your progress, and minor adjustments help keep the session productive and safe.",
+      "formula": null
+    },
+    {
+      "coord": "B61",
+      "row": 61,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C61",
+      "row": 61,
+      "col": "C",
+      "value": "What if I do not have access to certain equipment?",
+      "formula": null
+    },
+    {
+      "coord": "B62",
+      "row": 62,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C62",
+      "row": 62,
+      "col": "C",
+      "value": "If you don\u2019t have access to specific equipment or machines, simply adjust the exercise selection to use whatever you have available that\u2019s the closest possible substitute. The goal is to maintain the same general movement pattern and training intent \u2014 for example, swapping a leg press for dumbbell reverse lunges, when needed. Small adjustments like these won\u2019t negatively affect your progress as long as the overall movement and effort stay consistent.",
+      "formula": null
+    },
+    {
+      "coord": "B65",
+      "row": 65,
+      "col": "B",
+      "value": "Question",
+      "formula": null
+    },
+    {
+      "coord": "C65",
+      "row": 65,
+      "col": "C",
+      "value": "Can I use Google Sheets, or only Excel, to view the program?",
+      "formula": null
+    },
+    {
+      "coord": "B66",
+      "row": 66,
+      "col": "B",
+      "value": "Answer",
+      "formula": null
+    },
+    {
+      "coord": "C66",
+      "row": 66,
+      "col": "C",
+      "value": "The program is specifically designed to be used in Microsoft Excel, and that\u2019s the only platform we can guarantee it will function as intended. While you may be able to open the file in Google Sheets, we strongly advise against it, as the formatting, formulas, and calculations may not display or work correctly. We cannot provide support or ensure accurate performance if the program is used outside of Excel.",
+      "formula": null
+    }
+  ]
+}
